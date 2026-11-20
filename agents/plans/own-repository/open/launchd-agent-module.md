@@ -36,6 +36,10 @@ When enabled it sets `launchd.user.agents.onepassword-approval-alert`:
 
 The sound options match the flags of the [alert configuration](../../outcome-alerts/open/alert-configuration.md). If this node is built before that one, it offers the two sounds the program has then.
 
+## Agents stop sounding before commands
+
+Once the agent runs at login, it is the only sound for a 1Password prompt. Coding agents no longer play Antic-EncoreInfinitum, nor the second Text-Message-Acknowledgement-Exclamation alert, before a push, fetch, `secretspec`, `op` or SSH command: the rule leaves the agents' sound rule and every agent brief. A command that needs no approval makes no sound, and one that does sounds once, when 1Password shows the prompt.
+
 ## Checks
 
 - `nix flake check` passes on an Apple-silicon Mac.
